@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Using Parcel with OpenLayers</title>
+        <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.js"></script>  -->
+        <style>
+            #map {
+                width: 600px;
+                height: 650px;
+            }
+            .left {
+                float: left;
+                margin: 2%;
+            }
+            .hide {
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="map" class="left"></div>
+        <div class="left hide">
+            <label>Animation : &nbsp;</label>
+            <select id="animation">
+                <option value="" selected>None</option>
+                <option value="rotate_a">시계 방향</option>
+                <option value="rotate_b">반시계 방향</option>
+                <option value="rotate_all">한바퀴 회전 후 중앙은 한국 이동</option>
+                <option value="move">한국으로 이동(2초)</option>
+                <option value="move_fast">한국으로 이동(0초)</option>
+            </select>
+        </div>
+        <script src="./flightAnimation.js"></script>
+    </body>
+</html>
