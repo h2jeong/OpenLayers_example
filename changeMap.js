@@ -25,11 +25,19 @@ const vector = new VectorLayer({
 })
 
 const map = new Map({
-    target: 'map',
     // 사용하는 레이어, 벡터레이어를 추가해야 이벤트에 따른 원그리기, 선그리기 객체를 지도에 넣을 수 있다.
     layers: [
         layer,
         vector
     ],
     view: myView
-})
+}) 
+
+map.setTarget('map');
+
+// 위치 바꾸기
+const wrap = document.getElementById('wrap');
+wrap.addEventListener('click', function() {
+    let target = map.getTarget() === 'map' ? 'map_right' : 'map';
+    map.setTarget(target)
+}, false)
